@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src *;" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fire Sale</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <section class="controls">
+      <ul role="menubar" class="flex p-0 m-0 list-none">
+        <li role="menuitem" aria-labelledby="new-file" class="mr-1"><button id="new-file">New File</button></li>
+        <li role="menuitem" aria-labelledby="open-file" class="mr-1"><button id="open-file">Open File</button></li>
+        <li role="menuitem" aria-labelledby="save-markdown" class="mr-1"><button id="save-markdown" disabled>Save File</button></li>
+        <li role="menuitem" aria-labelledby="revert" class="mr-1"><button id="revert" disabled>Revert</button></li>
+        <li role="menuitem" aria-labelledby="save-html" class="mr-1"><button id="save-html">Save HTML</button></li>
+        <li role="menuitem" aria-labelledby="show-file" class="mr-1"><button id="show-file" disabled>Show File</button></li>
+        <li role="menuitem" aria-labelledby="open-in-default"><button id="open-in-default" disabled>Open in Default Application</button></li>
+      </ul>
+    </section>
+
+    <section class="content">
+      <label for="markdown" hidden>Markdown Content</label>
+      <textarea class="raw-markdown" id="markdown"></textarea>
+      <div class="rendered-html" id="html"></div>
+    </section>
+
+    <script>
+      require('./renderer')
+    </script>
+
+  </body>
+</html>
