@@ -2,7 +2,7 @@
   "name": "firesale",
   "version": "1.0.0",
   "description": "A Frontend Masters Example Application",
-  "main": "app/main.js",
+  "main": "src/main.js",
   "dependencies": {
     "electron": "^3.0.10",
     "marked": "^0.5.2"
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "start": "electron .",
+    "preinstall": "node build/npm/preinstall.js",
     "postinstall": "electron-rebuild",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
