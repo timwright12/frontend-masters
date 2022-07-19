@@ -1,0 +1,25 @@
+{
+  "name": "va-platform-onboarding",
+  "version": "0.1.0",
+  "description": "Platform Onboarding",
+  "main": "src/main.js",
+  "dependencies": {
+    "electron": "^19.0.7",
+    "marked": "^0.5.2",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "devtron": "^1.4.0",
+    "electron-packager": "^8.3.0",
+    "electron-rebuild": "^3.2.7",
+    "eslint": "^3.11.0",
+    "eslint-plugin-import": "^2.2.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "preinstall": "node scripts/npm/preinstall.js",
+    "postinstall": "electron-rebuild"
+  },
+  "license": "MIT"
+}

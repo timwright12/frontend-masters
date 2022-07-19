@@ -7,7 +7,13 @@ let mainWindow;
 app.on('ready', () => {
 
   // Create browswer instance, but don't show it
-  mainWindow = new BrowserWindow({ show: false });
+  mainWindow = new BrowserWindow({ 
+    show: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    }
+  });
 
   // Load HTML file
   mainWindow.loadFile(`${__dirname}/index.html`);
@@ -18,6 +24,17 @@ app.on('ready', () => {
   });
 
 });
+
+const openFile = (file) => {
+  const content = fs.readFileSync(file).toString();
+
+  // Set "file-opened" event, this is a custom event name
+  mainWindow.webContents.send(
+    'file-opened',
+    file,
+    content
+  );
+};
 
 // Let mainProcess talk to renderer
 exports.getFileFromUser = () => {
@@ -34,15 +51,4 @@ exports.getFileFromUser = () => {
 
   const file = files[0];
   openFile(file);
-};
-
-const openFile = (file) => {
-  const content = fs.readFileSync(file).toString();
-
-  // Set "file-opened" event, this is a custom event name
-  mainWindow.webContents.send(
-    'file-opened',
-    file,
-    content
-  );
 };

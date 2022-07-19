@@ -4,7 +4,7 @@
   "description": "A Frontend Masters Example Application",
   "main": "src/main.js",
   "dependencies": {
-    "electron": "^3.0.10",
+    "electron": "^19.0.7",
     "marked": "^0.5.2"
   },
   "devDependencies": {
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "preinstall": "node build/npm/preinstall.js",
+    "preinstall": "node scripts/npm/preinstall.js",
     "postinstall": "electron-rebuild",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,8 +6,10 @@ const { remote, ipcRenderer } = require('electron');
 let filePath = null;
 let originalContent = '';
 
-const mainProcess = remote.require('./main.js');
-const currentWindow = remote.getCurrentWindow();
+// const mainProcess = remote.require('./main.js');
+const mainProcess = ipcRenderer.invoke('read-file', './main.js')
+
+// const currentWindow = remote.getCurrentWindow();
 
 const markdownView = document.querySelector('#markdown');
 const htmlView = document.querySelector('#html');
@@ -35,10 +37,10 @@ const updateUserInterface = (isEdited) => {
   saveMarkdownButton.disabled = !isEdited;
   revertButton.disabled = !isEdited;
 
-  currentWindow.setTitle(title);
+  // currentWindow.setTitle(title);
 
-  currentWindow.setRepresentedFilename(filePath);
-  currentWindow.setDocumentEdited(isEdited);
+  // currentWindow.setRepresentedFilename(filePath);
+  // currentWindow.setDocumentEdited(isEdited);
 
 };
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; connect-src *;" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Platform Orientation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="banner" id="banner" role="banner">
+      <h1>Logo</h1>
+      <p>Platform Orientation (v<span id="software-version">0.1.0</span>)</p>
+    </header>
+
+    <main class="main" id="main" role="main">
+      <div class="col col-33">
+        <h2>Automated Services</h2>
+        <ul>
+          <li>
+            <a href="local-setup.html" class="button button--large">Setup Local Environment</a>
+            <p>Download repositories and run scripts needed to get you up and running locally</p>
+          </li>
+          <li>
+            <a href="https://github.com/department-of-veterans-affairs/va.gov-team/issues/new?assignees=&labels=external-request%2Coperations%2Cops-access-request&template=socks-access-request.yml&title=SOCKS+access+for+%5Bindividual%5D" class="button button--large" target="_blank">Request SOCKS Access</a>
+            <p>Some systems require special access, this will off the process for approval.</p>
+          </li>
+          <li>
+            <a href="#!" class="button button--large">Schedule Platform Orientation</a>
+            <p>You will also need to attend a platform orientation meeting to get a primer on our systems and processes.</p>
+          </li>
+        </ul>
+      </div><!--/.col-->
+      <div class="col col-33">
+        <h2>Self Services</h2>
+        <ul>
+          <li>
+            <a href="https://depo-platform-documentation.scrollhelp.site/" class="button button--large" target="_blank">View Documentation</a>
+            <p>VA platform has robust documentation for a your self-service needs.</p>
+          </li>
+          <li>
+            <a href="https://dsva.slack.com/archives/CBU0KDSB1" class="button button--large" target="_blank">Request Support</a>
+            <p>If you're ever stuck, we're here to support you through the #vfs-platform-support Slack channel.</p>
+          </li>
+        </ul>
+      </div><!--/.col-->
+    </main>
+
+    <script src="./renderer.js"></script>
+
+  </body>
+</html>
